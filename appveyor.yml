@@ -1,5 +1,5 @@
 image:
-- Visual Studio 2019
+- Visual Studio 2022
 - macOS
 - Ubuntu
 
@@ -17,7 +17,7 @@ install:
 - python -m pip install -r requirements.txt
 
 build_script:
-- flet pack main.py --name counter --icon icon.png --product-name counter --product-version "1.2.3" --copyright "Copyright (c) 2022 YourCompany Inc."
+- flet pack main.py --name counter --icon icon.png --product-name table --product-version "1.2.3" --copyright "Copyright (c) 2022 YourCompany Inc."
 
 test: off
 
@@ -64,7 +64,7 @@ for:
   #
   matrix:
     only:
-    - image: Visual Studio 2019
+    - image: Visual Studio 2022
 
   after_build:
   - 7z a counter-windows.zip %CD%\dist\*.exe
