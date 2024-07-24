@@ -28,9 +28,7 @@ deploy:
   on:
     APPVEYOR_REPO_TAG: true
 
-#
-#   Windows package
-#
+
 for:
 #
 #   macOS package
@@ -61,6 +59,9 @@ for:
   - path: counter-linux.tar.gz
 
 -
+  #
+  #   Windows package
+  #
   matrix:
     only:
     - image: Visual Studio 2019
