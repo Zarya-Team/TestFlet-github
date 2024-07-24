@@ -34,22 +34,16 @@ jobs:
         if: matrix.os == 'macos-latest'
         run: |
           tar -czvf counter-macos.tar.gz -C dist counter.app
-        with:
-          path: counter-macos.tar.gz
 
       - name: Package Linux
         if: matrix.os == 'ubuntu-latest'
         run: |
           tar -czvf counter-linux.tar.gz -C dist counter
-        with:
-          path: counter-linux.tar.gz
 
       - name: Package Windows
         if: matrix.os == 'windows-latest'
         run: |
           7z a counter-windows.zip %CD%\dist\*.exe
-        with:
-          path: counter-windows.zip
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
@@ -72,8 +66,6 @@ jobs:
 
       - name: Create Release
         uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref_name }}
           release_name: Release ${{ github.ref_name }}
