@@ -31,17 +31,6 @@ deploy:
 #   Windows package
 #
 for:
--
-  matrix:
-    only:
-    - image: Visual Studio 2019
-
-  after_build:
-  - 7z a counter-windows.zip %CD%\dist\*.exe
-
-  artifacts:
-  - path: counter-windows.zip
-
 #
 #   macOS package
 #
@@ -69,3 +58,14 @@ for:
 
   artifacts:
   - path: counter-linux.tar.gz
+
+-
+  matrix:
+    only:
+    - image: Visual Studio 2019
+
+  after_build:
+  - 7z a counter-windows.zip %CD%\dist\*.exe
+
+  artifacts:
+  - path: counter-windows.zip
