@@ -2,6 +2,7 @@ import flet as ft
 import pandas as pd
 
 
+
 def read_file(file_path):
     if file_path.endswith('.csv'):
         return pd.read_csv(file_path)
